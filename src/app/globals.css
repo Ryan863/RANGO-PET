@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-brand-orange: #F26522;
+  --color-brand-orange-hover: #E85D04;
+  --color-brand-orange-light: #FF8A4C;
+  --color-brand-cream: #F8F5DE;
+  --color-brand-cream-soft: #FAF6EB;
+  --color-brand-dark: #121110;
+  --color-brand-dark-surface: #181716;
+  --color-brand-dark-card: #201E1C;
+  --color-brand-dark-border: rgba(255, 255, 255, 0.08);
+  --color-brand-olive: #607548;
+
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-fraunces), Georgia, serif;
+  --font-script: var(--font-caveat), cursive;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #121110;
+}
+
+body {
+  background-color: #121110;
+  color: #F7F5F0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #F26522;
+  color: #FFFFFF;
+}
+
+/* Custom smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121110;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2825;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #F26522;
+}
+
+/* Mask image utilities for seamless editorial fades */
+.mask-radial-bottom {
+  mask-image: radial-gradient(circle at 50% 40%, black 50%, transparent 95%);
+  -webkit-mask-image: radial-gradient(circle at 50% 40%, black 50%, transparent 95%);
+}
+
+.mask-fade-edges {
+  mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 65%, transparent 100%);
+}
+
+.mask-hero-blend {
+  mask-image: radial-gradient(ellipse at 50% 45%, black 45%, rgba(0, 0, 0, 0.5) 75%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse at 50% 45%, black 45%, rgba(0, 0, 0, 0.5) 75%, transparent 100%);
+}
+
+/* Glassmorphism */
+.glass-panel {
+  background: rgba(24, 23, 22, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Light warm sections */
+.section-cream {
+  background-color: #F8F5DE;
+  color: #1C1917;
+}
+
+@keyframes pulse-subtle {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+.animate-pulse-subtle {
+  animation: pulse-subtle 3s ease-in-out infinite;
+}
